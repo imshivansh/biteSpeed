@@ -24,12 +24,14 @@ Here users can make a post request with their contact payload and System has to 
    id of the main primary contact as their linkedId and we will return the response having primary, phone, and email of primary and secondary contacts along the secondary contact Ids.
 
    Also, if we got the attribute that is different but not the primary contact instead they are the secondary contacts and have the same primary contact, then we will return the primary contact data along
-   with email, phone number, and emails of data that are secondary to it, which would include the payload data as well.
+   with email, phone number, and secondary of data that are secondary to it, which would include the information about the payload data as well.
 
-3. If we get the data that exists by email but does not by phone, then we will try to find the primary precedence of the email, which could already exist and there is a possibility
-   that email itself could be primary precedence or could be secondary itself, if it is secondary then our program will find the primary of the secondary email and create the new data with the phone number having secondary
-   precedence and will have linkedId of the primarily existing data and will return the response with primaryId (being the id of the primary contact),unique email, and phone number
-   of the secondary contacts along with their id .
+3. If we get the data that exists by email but does not by phone, then we will try to find the primary precedence of the email, which could already exist and there 
+   is a possibility
+   that email itself could be primary precedence or could be secondary itself, if it is secondary then our program will find the primary of the secondary email and 
+  create the new data with the phone number having secondary
+   precedence and will have linkedId of the primarily existing data and will return the response with primaryId (being the id of the primary contact),unique email, 
+   and phone number of the secondary contacts along with their id.
 
 4. Similar goes with PhoneNumber, if we get any contact payload that has an existing phone number but email does not exist then, it will find the 
    primary precedent contact details through that number and create and save new data in our DB having the linkedId of primary contact and
@@ -37,10 +39,11 @@ Here users can make a post request with their contact payload and System has to 
    phoneNumber of primary and all the secondary contact that has the primary contact's Id as their linkedId along with all the secondary Ids.
 
 5. If our payload has a null attribute then it will return Bad credentials as a response and if one attribute is null and the other one exist then 
-   it will return all the data related to that existing contact such as primary id of the primary contact of the existing payload attribute along with the email and phone number
-  of primary and all the secondary attributes along with secondary Ids.
+   it will return all the data related to that existing contact such as the primary id of the primary contact of the existing payload attribute along with the 
+  email  and phone numbers of the primary and all the secondary attributes along with secondary Ids.
 
-6. Point to remember Applicable to all cases, if there is the same email or phone number that are been created as secondary contact because of having one of the unique attributes,
+6. Point to remember Applicable to all cases, if there is the same email or phone number that are been created as secondary contact because of having one of the 
+   unique attributes,
    will not be repeated in our response instead unique ones  will be returned though they can be tracked with  secondaryIds, since they are unique for each.
 
    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
