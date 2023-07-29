@@ -3,13 +3,15 @@
 Hi folks this is the Readme for fluxkart helps detect duplicate contact to provide a customized experience to their user.
 In this project, we have taken certain scenarios into consideration.
 Here, we have contactPayload that has "email" and "phoneNumber" and the request would hit our backend with this payload.
-The Endpoint can be accessed at the below given commands or we can also use Postman to directly upload the contactpayLoad in Json format and hit the request
+The Endpoint can be accessed at the below given commands or we can also use Postman to upload the contactpayLoad in Json format directly and hit the request
 at below given biteSpeed URL and it would return a formatted JSON response.
 ```
 curl -X POST -H "Content-Type: application/json" -d '{"email": "Shivansh", "phoneNumber": "123"}' http://bitespeed-env-1.eba-g8ymuzid.eu-north-1.elasticbeanstalk.com/identify
 ```
 
 Here users can make a post request with their contact payload and System has to do the following actions depending upon inputs.
+Point to be noted: All the below-given tasks  Have been implemented by having one Contact entity in our Database but this can be further improved by having Different different tables for Primary and Secondary contacts that can further simplify the coding and improve the performance.
+ 
 1. If the user is new, it means we have no contact details about the user in our Database and we will create a new one, and will be stored in our database as
    primary precedence and the information related to him will be returned having attributes such as primaryId, phone, and email along with empty 
    secondary id.
