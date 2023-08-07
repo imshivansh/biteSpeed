@@ -1,4 +1,4 @@
-# biteSpeed
+# fluxKart a biteSpeed Project
 
 Hi folks this is the Readme for fluxkart helps detect duplicate contact to provide a customized experience to their user.
 In this project, we have taken certain scenarios into consideration.
@@ -26,13 +26,13 @@ Point to be noted: All the below-given tasks  Have been implemented by having on
    id of the main primary contact as their linkedId and we will return the response having primary, phone, and email of primary and secondary contacts along the secondary contact Ids.
 
    Also, if we got the attribute that is different but not the primary contact instead they are the secondary contacts and have the same primary contact, then we will return the primary contact data along
-   with email, phone number, and secondary of data that are secondary to it, which would include the information about the payload data as well.
+   with email, phone number, and secondary data that are secondary to it, which would include information about the payload data as well.
 
-3. If we get the data that exists by email but does not by phone, then we will try to find the primary precedence of the email, which could already exist and there 
+3. If we get the data that exists by email but does not by phone, then we will try to find the primary precedence of the email, which could already exist, and there 
    is a possibility
    that email itself could be primary precedence or could be secondary itself, if it is secondary then our program will find the primary of the secondary email and 
   create the new data with the phone number having secondary
-   precedence and will have linkedId of the primarily existing data and will return the response with primaryId (being the id of the primary contact),unique email, 
+   precedence and will have linkedId of the primarily existing data and will return the response with primaryId (being the id of the primary contact), unique email, 
    and phone number of the secondary contacts along with their id.
 
 4. Similar goes with PhoneNumber, if we get any contact payload that has an existing phone number but email does not exist then, it will find the 
